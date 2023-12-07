@@ -1,7 +1,7 @@
 <template>
 	<div class="Main">
 		<div v-if="Info.name" class="MainInfo">
-			<i style='font-size: 20vh;' :class='getIcon()'></i>
+			<i :class='getIcon()'></i>
 			<h2>{{ Info.name }}</h2>
 			<h3>Температура: {{ Info.main.temp }}</h3>
 			<h3>Ощущается как: {{ Info.main.feels_like }}</h3>
@@ -63,7 +63,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-image: url("../assets/Main/BG/Rain.jpg");
+	background-image: url("https://funart.top/uploads/posts/2022-08/1660335973_60-funart-pro-p-anime-art-paren-pod-dozhdem-krasivo-67.jpg");
 }
 
 .MainInfo {
@@ -76,5 +76,13 @@ export default {
 	width: 80%;
 	border-radius: 20px;
 	background-color: hsl(0, 0%, 0%, 0.4);
+	color: aliceblue;
+	min-width: 225px;
+	text-align: center;
+}
+
+.MainInfo i {
+	font-size: 20vh;
+	color: aliceblue;
 }
 </style>

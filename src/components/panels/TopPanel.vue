@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container">
-			<a class="navbar-brand">PORTFOLIO</a>
+			<a class="navbar-brand">Погода</a>
 			<button class="navbar-toggler custom-toggler ml-auto" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon custom-icon"></span>
@@ -16,7 +16,7 @@
 						<a class="nav-link">Информация</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link">Проекты</a>
+						<a class="nav-link">ссылки</a>
 					</li>
 				</ul>
 			</div>
