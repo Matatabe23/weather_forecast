@@ -2,7 +2,11 @@
 	<div class="Main">
 		<div v-if="Info.name" class="MainInfo">
 			<i :class='getIcon()'></i>
-			<h2>{{ Info.name }}</h2>
+			<h2>
+				<select v-model="selectedName" @change="sendSelectedName">
+					<option v-for="city in NameCity" :value="city.NameEU">{{ city.NameRU }}</option>
+				</select>
+			</h2>
 			<h3>Температура: {{ Info.main.temp }}</h3>
 			<h3>Ощущается как: {{ Info.main.feels_like }}</h3>
 		</div>
@@ -10,13 +14,17 @@
 </template>
 
 <script>
+import City from '@/ListCity'
+
 export default {
 	data() {
 		return {
 			apiKey: '24f246ff57bd750d9aac880beb062cc9',
-			city: 'Saint Petersburg',
+			city: 'Moscow',
 			Info: {},
-			imageUrl: ''
+			imageUrl: '',
+			selectedName: null,
+			NameCity: City
 		};
 
 	},
@@ -53,6 +61,11 @@ export default {
 			};
 			if (Choice[Weather]) return Choice[Weather];
 		},
+		sendSelectedName() {
+			console.log(this.selectedName);
+			this.city = this.selectedName
+			this.getWeatherData()
+		},
 	},
 };
 </script>
@@ -63,19 +76,22 @@ export default {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-image: url("https://funart.top/uploads/posts/2022-08/1660335973_60-funart-pro-p-anime-art-paren-pod-dozhdem-krasivo-67.jpg");
+	background-image: url("https://fon.litrelax.ru/uploads/posts/2023-01/1673326742_foni-club-p-oboi-anime-noch-dozhd-24.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 .MainInfo {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0%;
+	padding: 2rem;
 	margin: 5%;
 	height: 80%;
 	width: 80%;
 	border-radius: 20px;
-	background-color: hsl(0, 0%, 0%, 0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 	color: aliceblue;
 	min-width: 225px;
 	text-align: center;
