@@ -4,8 +4,10 @@
 			<i :class='getIcon()'></i>
 			<h2>
 				<select v-model="selectedName" @change="sendSelectedName">
+					<option :value="null" disabled selected>Выберите город</option>
 					<option v-for="city in NameCity" :value="city.NameEU">{{ city.NameRU }}</option>
 				</select>
+
 			</h2>
 			<h3>Температура: {{ Info.main.temp }}</h3>
 			<h3>Ощущается как: {{ Info.main.feels_like }}</h3>
